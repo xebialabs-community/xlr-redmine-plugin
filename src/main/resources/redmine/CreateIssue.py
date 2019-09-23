@@ -14,8 +14,6 @@ import com.xhaus.jyson.JysonCodec as json
 if redmineServer is None:
     print "No server provided."
     sys.exit(1)
-
-if apiKey is None:
   
 
 ISSUE_CREATED_STATUS = 201
