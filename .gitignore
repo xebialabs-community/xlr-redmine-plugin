@@ -2,3 +2,7 @@
 build
 temp
 supervisord.*
+.vscode/*
+.history/*
+.settings/*
+.DS_Store
