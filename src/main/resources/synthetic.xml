@@ -14,7 +14,7 @@
 <synthetic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xmlns="http://www.xebialabs.com/deployit/synthetic"
            xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd">
-
+    <!--
     <type type="redmine.Task" extends="xlrelease.PythonScript" virtual="true">
         <property name="iconLocation" default="redmine/redmine_icon.png" hidden="true"/>
         <property name="redmineServer" category="input" label="Server" referenced-type="redmine.Server"
@@ -29,22 +29,10 @@
         <property name="subject" category="input" label="Subject of the issue" />
         <property name="priorityId" category="input" label="Id of the priority of the issue" />
     </type>
-
+    -->
     <type type="redmine.Server" label="Redmine: Server" extends="configuration.HttpConnection">
-        <property name="apiKey"
-                label="API Key"
-                required="true"
-                password="true"
+        <property name="apiKey" label="API Key" required="false" password="true"
                 description="The API Key associated with the member account that you want to connect with" />
-        <property name="username"
-                default="ignored"
-                category="input"
-                hidden="true"/>
-        <property name="password" 
-                password="true"
-                default="ignored"
-                category="input"
-                hidden="true"/>
     </type>
 
 </synthetic>
