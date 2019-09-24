@@ -14,22 +14,21 @@
 <synthetic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xmlns="http://www.xebialabs.com/deployit/synthetic"
            xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd">
-    <!--
+    
     <type type="redmine.Task" extends="xlrelease.PythonScript" virtual="true">
         <property name="iconLocation" default="redmine/redmine_icon.png" hidden="true"/>
         <property name="redmineServer" category="input" label="Server" referenced-type="redmine.Server"
                   kind="ci"/>
-        <property name="apiKey" category="input" required="false"/>
-        <property name="taskColor" hidden="true" default="#CC0033" />
+        <property name="taskColor" hidden="true" default="#D94939" />
     </type>
 
-    <type type="redmine.CreateIssue" extends="redmine.Task">
-        <property name="scriptLocation" default="redmine/CreateIssue.py" hidden="true"/>
-        <property name="projectId" category="input" label="Id of the project" />
-        <property name="subject" category="input" label="Subject of the issue" />
-        <property name="priorityId" category="input" label="Id of the priority of the issue" />
+    <type type="redmine.GetIssues" extends="redmine.Task">
+        <property name="scriptLocation" default="redmine/GetIssues.py" hidden="true"/>
+        <property name="issueIds" category="input" label="Issue Ids" required="false" description="get issue with the given id or multiple issues by id using ',' to separate id" />
+        <property name="projectId" category="input" label="Project_id" required="false" description="get issues from the project with the given id" />
+        <property name="issues" category="output" kind="map_string_string" required="false" label="Issues" description="id and name of found issues"/>
     </type>
-    -->
+    
     <type type="redmine.Server" label="Redmine: Server" extends="configuration.HttpConnection">
         <property name="apiKey" label="API Key" required="false" password="true"
                 description="The API Key associated with the member account that you want to connect with" />
