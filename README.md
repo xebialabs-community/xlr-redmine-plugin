@@ -1,4 +1,4 @@
-# XL Deploy|Release Description|Interface plugin v1.0.0
+# XL Release Redmine plugin v1.0.0
 
 [![Build Status][xlr-redmine-plugin-travis-image]][xlr-redmine-plugin-travis-url]
 [![License: MIT][xlr-redmine-plugin-license-image]][xlr-redmine-plugin-license-url]
@@ -12,7 +12,7 @@
 
 ## Preface
 
-This document describes the functionality provided by the XL Deploy|Release Description|Interface plugin.
+This document describes the functionality provided by the XL Release Redmine plugin.
 
 See the [XL Deploy reference manual](https://docs.xebialabs.com/xl-deploy) for background information on XL Deploy and deployment automation concepts.  
 or  
@@ -26,7 +26,7 @@ Note:  XLD or XLR version should not be lower than lowest supported version.  Se
 
 ## Installation
 
-* Copy the latest JAR file from the [releases page](https://github.com/xebialabs-community/xlr-redmine-plugin/releases) into the `XL_DEPLOY|RELEASE_SERVER/plugins` directory.
+* Copy the latest JAR file from the [releases page](https://github.com/xebialabs-community/xlr-redmine-plugin/releases) into the `RELEASE_SERVER/plugins` directory.
 * Restart the XL Deploy|Release server.
 
 ## Features/Usage/Types/Tasks
