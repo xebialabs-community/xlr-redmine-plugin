@@ -1,4 +1,4 @@
-# XL Release Redmine plugin v1.0.0
+# XL Release Redmine plugin v0.1.8
 
 [![Build Status][xlr-redmine-plugin-travis-image]][xlr-redmine-plugin-travis-url]
 [![License: MIT][xlr-redmine-plugin-license-image]][xlr-redmine-plugin-license-url]
