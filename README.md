@@ -47,5 +47,5 @@ Note:  XLR version should not be lower than lowest supported version.  See <http
 
 ## References
 
-<https://www.redmine.org>
-<https://www.redmine.org/projects/redmine/wiki/Rest_api>
+* <https://www.redmine.org>
+* <https://www.redmine.org/projects/redmine/wiki/Rest_api>
