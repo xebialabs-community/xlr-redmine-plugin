@@ -29,7 +29,7 @@ Note:  XLD or XLR version should not be lower than lowest supported version.  Se
 ## Installation
 
 * Copy the latest JAR file from the [releases page](https://github.com/xebialabs-community/xlr-redmine-plugin/releases) into the `RELEASE_SERVER/plugins` directory.
-* Restart the XL Deploy|Release server.
+* Restart the XL Release server.
 
 ## Usage
 
