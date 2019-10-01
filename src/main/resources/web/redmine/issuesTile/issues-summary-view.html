@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    </head>
+        <script>
+                window.addEventListener("xlrelease.load", function() {
+                    window.xlrelease.queryTileData(function(response){
+                        console.log(response.data)
+                        $("#count").html(response.data.data.count)
+                    })
+                });
+        </script>
+    <body>
+        <h2>Number of issues: <span id="count"></span></h2>
+    </body>
+</html>

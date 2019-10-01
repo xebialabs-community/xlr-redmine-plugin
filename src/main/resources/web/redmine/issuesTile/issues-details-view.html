@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<script>
+    window.addEventListener("xlrelease.load", function () {
+
+        window.xlrelease.queryTileData(function (response) {
+
+            var issues = response.data.data.issues;
+            var url = response.data.data.url;
+            issues.forEach(element => {
+                $('#issues').append(
+                    '<tr>'
+                        +'<td>' + element.id + '</td>'
+                        +'<td><a target="blank" href="' + url + '/issues/' + + element.id + '">' + element.subject + '</a></td>'
+                        +'<td>' + element.author + '</td>'
+                        +'<td>' + element.priority + '</td>'
+                        +'<td>' + element.description + '</td>'
+                        +'<td>' + element.startDate + '</td>'
+                        +'</tr>'
+
+                )
+            });
+            
+        });
+
+    });
+
+    
+</script>
+<body>
+<h3 id="title">List of Redmine issues</h3>
+<table class="table table-rounded table-striped">
+    <thead>
+    <tr>
+        <th>Id</th>
+        <th>Subject</th>
+        <th>Author</th>
+        <th>Priority</th>
+        <th>Description</th>
+        <th>Start date</th>
+    </tr>
+    </thead>
+    <tbody id="issues">
+    </tbody>
+</table>
+</body>
+</html>

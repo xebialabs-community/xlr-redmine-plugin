@@ -24,14 +24,33 @@
 
     <type type="redmine.GetIssues" extends="redmine.Task">
         <property name="scriptLocation" default="redmine/GetIssues.py" hidden="true"/>
-        <property name="issueIds" category="input" label="Issue Ids" required="false" description="get issue with the given id or multiple issues by id using ',' to separate id" />
-        <property name="projectId" category="input" label="Project_id" required="false" description="get issues from the project with the given id" />
-        <property name="issues" category="output" kind="map_string_string" required="false" label="Issues" description="id and name of found issues"/>
+        <property name="issueIds" kind="list_of_string" category="input" label="Issue ids" required="false" description="get issues by ids" />
+        <property name="projectId" category="input" label="Project id" required="false" description="get issues from the project with the given id" />
+        <property name="otherFields" kind="map_string_string" category="input" label="Fields and values" required="false" description="get issues by any field" />
+        <property name="issues" category="output" kind="map_string_string" required="false" label="Issues" description="id and subject of found issues"/>
+    </type>
+
+    <type type="redmine.UpdateIssues" extends="redmine.Task">
+        <property name="scriptLocation" default="redmine/UpdateIssues.py" hidden="true"/>
+        <property name="issues" label="Issue ids" category="input" kind="map_string_string" required="false" description="update issues by ids."/>
+        <property name="newStatus" label="New status id" category="input" default="" required="false" description="new status of the issues"/>
+        <property name="comment" size="large" label="Comment" category="input" required="false" description="comment text to add to the updated issues"/>
     </type>
     
     <type type="redmine.Server" label="Redmine: Server" extends="configuration.HttpConnection">
         <property name="apiKey" label="API Key" required="false" password="true"
                 description="The API Key associated with the member account that you want to connect with" />
+    </type>
+
+    <type type="redmine.IssuesTile" label="Redmine issues" extends="xlrelease.Tile" description="Display Redmine issues.">
+        <property name="cacheEnabled" kind="boolean" hidden="true" default="false" description="True if tile data should be cached."/>
+        <property name="supportedScopes" default="release" hidden="true" kind="list_of_string"/>
+        <property name="description" default="List of Redmine issues" description="A short description displayed on the tile." />
+        <property name="uri" hidden="true" default="redmine/issuesTile/issues-summary-view.html" />
+        <property name="detailsUri" hidden="true" default="redmine/issuesTile/issues-details-view.html"/>
+        <property name="title" description="Display name of the tile" default="Redmine issues"/>
+        <property name="redmineServer" category="input" label="Server" referenced-type="redmine.Server" kind="ci"/>
+        <property name="issues" category="input" description="List of issues" kind="map_string_string" label="List of issues" required="true" />
     </type>
 
 </synthetic>

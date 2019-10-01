@@ -13,4 +13,5 @@ from redmine import RedmineServer
 
 redmine = RedmineServer(redmineServer)
 
-issues = redmine.getIssues(issueIds, projectId, otherFields)
+for issueId in sorted(issues.keys()):
+    redmine.updateIssue(issueId, newStatus, comment)
