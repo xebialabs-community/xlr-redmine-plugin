@@ -1,4 +1,4 @@
-# XL Release Redmine plugin v0.1.8
+# XL Release Redmine plugin
 
 [![Build Status][xlr-redmine-plugin-travis-image]][xlr-redmine-plugin-travis-url]
 [![License: MIT][xlr-redmine-plugin-license-image]][xlr-redmine-plugin-license-url]
@@ -14,13 +14,15 @@
 
 This document describes the functionality provided by the XL Release Redmine plugin.
 
-See the [XL Deploy reference manual](https://docs.xebialabs.com/xl-deploy) for background information on XL Deploy and deployment automation concepts.  
-or  
 See the [XL Release reference manual](https://docs.xebialabs.com/xl-release) for background information on XL Release and release automation concepts.  
 
 ## Overview
 
+The xlr-redmine-plugin is an XL Release plugin that allows you to integrate with Redmine.
+
 ## Requirements
+
+* **XL Release Server** 9+
 
 Note:  XLD or XLR version should not be lower than lowest supported version.  See <https://support.xebialabs.com/hc/en-us/articles/115003299946-Supported-XebiaLabs-product-versions>.
 
@@ -29,7 +31,20 @@ Note:  XLD or XLR version should not be lower than lowest supported version.  Se
 * Copy the latest JAR file from the [releases page](https://github.com/xebialabs-community/xlr-redmine-plugin/releases) into the `RELEASE_SERVER/plugins` directory.
 * Restart the XL Deploy|Release server.
 
-## Features/Usage/Types/Tasks
+## Usage
+
+### Get Issues task
+
+![getIssues screenshot](images/getIssues.png)
+
+### Update Issues task
+
+![updateIssues screenshot](images/updateIssues.png)
+
+### Create Issue task
+
+![createIssue screenshot](images/createIssue.png)
 
 ## References
 
+<https://www.redmine.org>
