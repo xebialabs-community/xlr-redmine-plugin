@@ -29,7 +29,7 @@ dependencies {
                 '/path/to/local/file3.jar')
 }
 
-version = "0.1.8"
+version = "0.1.8" 
 
 if (!project.hasProperty('release.scope')) {
   project.ext['release.scope'] = 'patch'
