@@ -24,7 +24,7 @@ The xlr-redmine-plugin is an XL Release plugin that allows you to integrate with
 
 * **XL Release Server** 9+
 
-Note:  XLD or XLR version should not be lower than lowest supported version.  See <https://support.xebialabs.com/hc/en-us/articles/115003299946-Supported-XebiaLabs-product-versions>.
+Note:  XLR version should not be lower than lowest supported version.  See <https://support.xebialabs.com/hc/en-us/articles/115003299946-Supported-XebiaLabs-product-versions>.
 
 ## Installation
 
@@ -48,3 +48,4 @@ Note:  XLD or XLR version should not be lower than lowest supported version.  Se
 ## References
 
 <https://www.redmine.org>
+<https://www.redmine.org/projects/redmine/wiki/Rest_api>
