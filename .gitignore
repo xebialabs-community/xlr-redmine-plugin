@@ -7,5 +7,5 @@ temp
 .project
 .pydevproject
 .DS_*
-.vscode/*
-.history/*
+.vscode
+.history
