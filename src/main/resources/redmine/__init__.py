@@ -63,7 +63,7 @@ class RedmineServer:
         filters = ''
         url = '/issues.json'
 
-        if issueIds != None:
+        if issueIds != None and len(issueIds)>0:
             filters = 'issue_id=' + ','.join(issueIds)
         
         if projectId != None:
@@ -80,7 +80,7 @@ class RedmineServer:
 
         if len(filters) > 0:
             url += '?' + filters
-
+        print(url)
         try:
             response = request.get(url, content=None, contentType=self.content_type, headers=self._createHeaders())
             if response.status == 200:

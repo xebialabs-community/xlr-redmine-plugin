@@ -19,7 +19,7 @@
         <property name="iconLocation" default="redmine/redmine_icon.png" hidden="true"/>
         <property name="redmineServer" category="input" label="Server" referenced-type="redmine.Server"
                   kind="ci"/>
-        <property name="taskColor" hidden="true" default="#D94939" />
+        <property name="taskColor" hidden="true" default="#6B8DB2" />
     </type>
 
     <type type="redmine.GetIssues" extends="redmine.Task">
@@ -49,7 +49,7 @@
         <property name="uri" hidden="true" default="redmine/issuesTile/issues-summary-view.html" />
         <property name="detailsUri" hidden="true" default="redmine/issuesTile/issues-details-view.html"/>
         <property name="title" description="Display name of the tile" default="Redmine issues"/>
-        <property name="redmineServer" category="input" label="Server" referenced-type="redmine.Server" kind="ci"/>
+        <property name="redmineServer" category="input" label="Server" referenced-type="redmine.Server" kind="ci" required="true"/>
         <property name="issues" category="input" description="List of issues" kind="map_string_string" label="List of issues" required="true" />
     </type>
 
