@@ -1,8 +1,11 @@
 .gradle
 build
+bin
 temp
-supervisord.*
+.classpath
+.settings
+.project
+.pydevproject
+.DS_*
 .vscode/*
 .history/*
-.settings/*
-.DS_Store
