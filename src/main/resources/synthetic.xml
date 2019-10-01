@@ -36,6 +36,14 @@
         <property name="newStatus" label="New status id" category="input" default="" required="false" description="new status of the issues"/>
         <property name="comment" size="large" label="Comment" category="input" required="false" description="comment text to add to the updated issues"/>
     </type>
+
+    <type type="redmine.CreateIssue" extends="redmine.Task">
+        <property name="scriptLocation" default="redmine/CreateIssue.py" hidden="true"/>
+        <property name="projectId" category="input" kind="integer" label="Project id" required="true" description="create issue for the project with the given id" />
+        <property name="priorityId" category="input" kind="integer" label="Priority id" required="true" description="create issue with the given priority id" />
+        <property name="subject" category="input" label="Subject" required="true" description="create issue with the given subject" />
+        <property name="issueId" category="output" kind="integer" label="Id of the new issue" description="id of the new issue" />
+    </type>
     
     <type type="redmine.Server" label="Redmine: Server" extends="configuration.HttpConnection">
         <property name="apiKey" label="API Key" required="false" password="true"

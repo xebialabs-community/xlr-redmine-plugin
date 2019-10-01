@@ -118,6 +118,27 @@ class RedmineServer:
             raise Exception()
 
 
+    def createIssue(self, projectId, priorityId, subject):
+        request = self._createRequest()
+        newContent = {
+            'issue': {
+                'project_id': projectId,
+                'priority_id': priorityId,
+                'subject': subject
+            }
+        }
+        newContent = self._serialize(newContent)
+
+        try:
+            response = request.post('/issues.json', newContent, contentType=self.content_type, headers=self._createHeaders())
+            if response.status == 201:
+                data = Json.loads(response.getResponse())
+                return data['issue']['id']
+            else:
+                print u'Error creating issue: {0}'.format(response.errorDump())
+        except ClientProtocolException:
+            raise Exception()
+
 
     def _createRequest(self):
         params = self.redmine_server.copy()
