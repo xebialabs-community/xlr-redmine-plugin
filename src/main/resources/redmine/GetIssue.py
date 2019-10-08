@@ -8,32 +8,11 @@
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #
 
+
 from redmine import RedmineServer
-import com.xhaus.jyson.JysonCodec as Json
 
-if redmineServer != None:
-    redmine = RedmineServer(redmineServer)
-    
-    data = {}
-    result = []
-    if issues != None and len(issues)>0:
+redmine = RedmineServer(redmineServer)
 
-        for loop in issues:
-            issueDict = redmine.getIssue(loop)
-            issue_json = Json.dumps(issueDict, sort_keys=True)
-            result.append(issue_json)
-                
-        data = {
-            "count": len(issues),
-            "issues": result,
-            "url": redmineServer['url']
-        }
-    else:
-        data = {
-            "count": 0
-        }
-else:
+data = redmine.getIssue(issueId)
 
-    data = {
-        "count": 0
-    }
+issue = data['issue']

@@ -22,10 +22,16 @@
         <property name="taskColor" hidden="true" default="#6B8DB2" />
     </type>
 
+    <type type="redmine.GetIssue" extends="redmine.Task">
+        <property name="scriptLocation" default="redmine/GetIssue.py" hidden="true"/>
+        <property name="issueId" category="input" label="Issue id" required="true" description="get issue by id" />
+        <property name="issue" category="output" kind="map_string_string" required="false" label="Issue" description="Found issue properties and values"/>
+    </type>
+
     <type type="redmine.GetIssues" extends="redmine.Task">
         <property name="scriptLocation" default="redmine/GetIssues.py" hidden="true"/>
         <property name="issueIds" kind="list_of_string" category="input" label="Issue ids" required="false" description="get issues by ids" />
-        <property name="projectId" category="input" label="Project id" required="false" description="get issues from the project with the given id" />
+        <property name="projectId" category="input" label="Project id" required="true" description="get issues from the project with the given id" />
         <property name="otherFields" kind="map_string_string" category="input" label="Fields and values" required="false" description="get issues by any field" />
         <property name="issues" category="output" kind="map_string_string" required="false" label="Issues" description="id and subject of found issues"/>
     </type>
@@ -42,7 +48,7 @@
         <property name="projectId" category="input" kind="integer" label="Project id" required="true" description="create issue for the project with the given id" />
         <property name="priorityId" category="input" kind="integer" label="Priority id" required="true" description="create issue with the given priority id" />
         <property name="subject" category="input" label="Subject" required="true" description="create issue with the given subject" />
-        <property name="issueId" category="output" kind="integer" label="Id of the new issue" description="id of the new issue" />
+        <property name="issueId" category="output" label="Id of the new issue" description="id of the new issue" />
     </type>
     
     <type type="redmine.Server" label="Redmine: Server" extends="configuration.HttpConnection">

@@ -12,4 +12,6 @@ from redmine import RedmineServer
 
 redmine = RedmineServer(redmineServer)
 
-issueId = redmine.createIssue(projectId, priorityId, subject)
+data = redmine.createIssue(projectId, priorityId, subject)
+
+issueId = data['issue']['id']

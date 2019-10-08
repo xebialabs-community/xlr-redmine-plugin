@@ -28,12 +28,16 @@
             var issues = response.data.data.issues;
             var url = response.data.data.url;
             issues.forEach(element => {
+
+                obj = JSON.parse(element);
+                element = obj.issue;
+
                 $('#issues').append(
                     '<tr>'
                         +'<td>' + element.id + '</td>'
                         +'<td><a target="blank" href="' + url + '/issues/' + + element.id + '">' + element.subject + '</a></td>'
-                        +'<td>' + element.author + '</td>'
-                        +'<td>' + element.priority + '</td>'
+                        +'<td>' + element.author.name + '</td>'
+                        +'<td>' + element.priority.name + '</td>'
                         +'<td>' + element.description + '</td>'
                         +'<td>' + element.startDate + '</td>'
                         +'</tr>'

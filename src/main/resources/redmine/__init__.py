@@ -22,40 +22,21 @@ class RedmineServer:
             error(u'No Server provided')
         self.redmine_server = redmine_server
 
-    def getIssuesDetails(self, issueIds=None, projectId=None, otherFields=None):
+    def getIssue(self, issueId):
+        if issueId == None or len(issueId)<1:
+            error(u'IssueId can not be null')
+
         request = self._createRequest()
-        issues = {}
-        filters = ''
-        url = '/issues.json'
-
-        if issueIds != None:
-            filters = 'issue_id=' + ','.join(issueIds)
-        
-        if projectId != None:
-            if len(filters) > 0:
-                filters += '&'
-            filters += 'project_id=' + projectId
-
-        if otherFields != None:
-            if len(filters) > 0:
-                filters += '&'
-            for loop in otherFields:
-                filters += urllib.quote_plus(loop) + '=' + urllib.quote_plus(otherFields[loop]) + '&'
-            filters = filters[:-1]
-
-        if len(filters) > 0:
-            url += '?' + filters
-
+        url = '/issues/' + issueId + '.json'
         try:
             response = request.get(url, content=None, contentType=self.content_type, headers=self._createHeaders())
             if response.status == 200:
                 data = Json.loads(response.response)
-                return data['issues']
+                return data
             else:
-                error(u'Failed to get issues', response)
+                error(u'Failed to get issue', response)
         except ClientProtocolException:
             raise Exception()
-
 
     def getIssues(self, issueIds=None, projectId=None, otherFields=None):
         request = self._createRequest()
@@ -80,7 +61,7 @@ class RedmineServer:
 
         if len(filters) > 0:
             url += '?' + filters
-        print(url)
+
         try:
             response = request.get(url, content=None, contentType=self.content_type, headers=self._createHeaders())
             if response.status == 200:
@@ -133,7 +114,7 @@ class RedmineServer:
             response = request.post('/issues.json', newContent, contentType=self.content_type, headers=self._createHeaders())
             if response.status == 201:
                 data = Json.loads(response.getResponse())
-                return data['issue']['id']
+                return data
             else:
                 print u'Error creating issue: {0}'.format(response.errorDump())
         except ClientProtocolException:
