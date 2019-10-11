@@ -27,7 +27,7 @@
 
             var issues = response.data.data.issues;
             var url = response.data.data.url;
-            issues.forEach(element => {
+            issues.forEach(function(element){
 
                 obj = JSON.parse(element);
                 element = obj.issue;

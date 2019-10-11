@@ -33,6 +33,10 @@ Note:  XLR version should not be lower than lowest supported version.  See <http
 
 ## Usage
 
+### Get Issue task
+
+![getIssue screenshot](images/getIssue.png)
+
 ### Get Issues task
 
 ![getIssues screenshot](images/getIssues.png)

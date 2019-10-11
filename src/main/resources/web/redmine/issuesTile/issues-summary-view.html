@@ -19,7 +19,6 @@
         <script>
                 window.addEventListener("xlrelease.load", function() {
                     window.xlrelease.queryTileData(function(response){
-                        console.log(response.data)
                         $("#count").html(response.data.data.count)
                     })
                 });
